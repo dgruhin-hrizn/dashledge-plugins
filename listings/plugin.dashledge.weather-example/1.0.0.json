@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.weather-example",
+  "version": "1.0.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-plugins",
+    "tag": "weather-example-v1.0.0",
+    "asset": "weather-example-1.0.0.zip"
+  },
+  "sha256": "7c667dc029867f579c91717c5d5658f28d0fb9448c363fdf278d824088164afe",
+  "summary": "Current weather and forecast from Open-Meteo. The example plugin from the Dashledge author guide.",
+  "notes": "First Marketplace release of the example widget."
+}
