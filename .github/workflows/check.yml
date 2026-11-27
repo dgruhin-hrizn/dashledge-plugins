@@ -11,7 +11,7 @@ permissions:
 env:
   # The Dashledge source the checker is built from. Keep it on a commit whose package
   # rules match the app version the Marketplace serves.
-  DASHLEDGE_REF: feat/plugin-marketplace
+  DASHLEDGE_REF: main
 
 jobs:
   check:
