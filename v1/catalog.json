@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "sequence": 2,
-  "generated": 1795796446,
-  "expires": 1798388446,
+  "sequence": 3,
+  "generated": 1795802227,
+  "expires": 1798394227,
   "plugins": [
     {
       "id": "plugin.dashledge.weather-example",
