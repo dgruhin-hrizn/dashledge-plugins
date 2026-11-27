@@ -54,7 +54,7 @@ cargo run --manifest-path src-tauri/package-core/Cargo.toml --bin dashledge-pack
 ## Dashledge's own plugins
 
 IDs under `plugin.dashledge.` are first-party. The Marketplace shows them **by Dashledge** with a Dashledge badge. Only maintainers in `MAINTAINERS` can list them, and CI refuses anyone else.
-- **Source:** a first-party listing's `source.repo` is always [dgruhin-hrizn/dashledge-official-plugins](https://github.com/dgruhin-hrizn/dashledge-official-plugins), and its asset comes from a release that repository's workflow made.
+- **Source:** a first-party listing's `source.repo` is [dgruhin-hrizn/dashledge-official-plugins](https://github.com/dgruhin-hrizn/dashledge-official-plugins), and its asset comes from a release that repository's workflow made. The one exception is `plugin.dashledge.weather-example` 1.0.0, released here before that repository existed.
 - **The spec:** that repository's CI enforces the first-party spec in its `AGENTS.md`. Review a first-party listing against the checklist below as well.
 - **Listing a release:** the release notes hold the listing JSON. Add it as `listings/<id>/<version>.json`.
 
