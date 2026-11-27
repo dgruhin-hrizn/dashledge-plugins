@@ -28,4 +28,4 @@ The catalog expires after 30 days and is re-signed weekly. A pulled version (`re
 | `MAINTAINERS` | GitHub logins that review and may publish under `plugin.dashledge.`. |
 | `scripts/check-pr.sh`, `scripts/publish.sh` | What the two workflows run. |
 
-The checker, `dashledge-package`, lives in the Dashledge repository at `src-tauri/package-core`. The workflows build it from the commit named in `DASHLEDGE_REF`.
+The checker, `dashledge-package`, lives in the Dashledge repository at `src-tauri/package-core`. Both workflows build it from the branch or commit named in `DASHLEDGE_REF`. Every pull request check also runs the full catalog build that publishing runs, so a merged change can't break publishing.

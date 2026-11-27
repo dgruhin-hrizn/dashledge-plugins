@@ -61,6 +61,37 @@ while IFS=$'\t' read -r change path; do
   esac
 done < <(git diff --name-status --no-renames "${BASE:?}"...HEAD)
 
+# Dry run of the build publish.sh runs on the merged tree, against the live catalog, so a
+# merged change can never break publishing or the weekly re-sign. It catches what only
+# the whole catalog shows: screenshots, one publisher per plugin, listing paths,
+# published versions that changed or disappeared, and revoked.json.
+pages=${PAGES_URL:-https://dgruhin-hrizn.github.io/dashledge-plugins/v1}
+dry=(catalog --listings listings --packages "$work/all" --out "$work/dry" --maintainers "$maintainers")
+if curl -fsSL --proto '=https' "$pages/catalog.json" -o "$work/previous.json" 2>/dev/null; then
+  dry+=(--previous "$work/previous.json")
+fi
+[[ -f revoked.json ]] && dry+=(--revoked revoked.json)
+mkdir -p "$work/all"
+if ! "$tool" sources --listings listings > "$work/sources" 2> "$work/error"; then
+  fail listings "$(cat "$work/error")"
+else
+  while read -r id version url sha; do
+    dest="$work/all/$id/$version.zip"
+    mkdir -p "$(dirname "$dest")"
+    if [[ -f "$work/$id/$version.zip" ]]; then
+      cp "$work/$id/$version.zip" "$dest"
+    elif [[ -n "${LOCAL_PACKAGES:-}" && -f "$LOCAL_PACKAGES/$id/$version.zip" ]]; then
+      cp "$LOCAL_PACKAGES/$id/$version.zip" "$dest"
+    elif ! curl -fsSL --proto '=https' --max-filesize 8388608 "$pages/packages/$id/$version.zip" -o "$dest" 2>/dev/null \
+      && ! curl -fsSL --proto '=https' --max-filesize 8388608 --retry 2 "$url" -o "$dest"; then
+      fail "listings/$id/$version.json" "Could not download $url for the catalog build."
+    fi
+  done < "$work/sources"
+  if [[ $failed == 0 ]] && ! "$tool" "${dry[@]}" > /dev/null 2> "$work/error"; then
+    fail catalog "Publishing would fail: $(cat "$work/error")"
+  fi
+fi
+
 if [[ $failed == 0 ]]; then
   echo "All checks passed. A maintainer reviews the grants above before merging." >> "$summary"
 fi
