@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.weather-example",
+  "version": "1.1.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "weather-example-v1.1.0",
+    "asset": "weather-example-1.1.0.zip"
+  },
+  "sha256": "9f40c33dcab1ad641a85b9595a8a7164f03331311ecd197f24220cc42ef2ae8b",
+  "summary": "Current conditions and the next 24 hours from Open-Meteo, for a place you choose. Dashledge's reference plugin.",
+  "notes": "Each placement chooses its own place and °F or °C, adds the next 24 hours, and uses Dashledge's look. Existing installs ask to approve settings, the ui kit, the geocoding host and the watch command."
+}
