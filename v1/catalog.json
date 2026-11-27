@@ -1,8 +1,43 @@
 {
   "schema": 1,
-  "sequence": 1,
-  "generated": 1795796056,
-  "expires": 1798388056,
-  "plugins": [],
+  "sequence": 2,
+  "generated": 1795796446,
+  "expires": 1798388446,
+  "plugins": [
+    {
+      "id": "plugin.dashledge.weather-example",
+      "publisher": "dgruhin-hrizn",
+      "title": "Weather (example)",
+      "summary": "Current weather and forecast from Open-Meteo. The example plugin from the Dashledge author guide.",
+      "category": "Everyday",
+      "homepage": "https://github.com/dgruhin-hrizn/dashledge/tree/main/widgets/example",
+      "license": "MIT",
+      "icon": {
+        "path": "icons/plugin.dashledge.weather-example/1.0.0.svg",
+        "sha256": "e79220ab0c489208620ee056289cf7129201adeaec92028b2a77be5b33a3b3a0"
+      },
+      "versions": [
+        {
+          "version": "1.0.0",
+          "path": "packages/plugin.dashledge.weather-example/1.0.0.zip",
+          "sha256": "7c667dc029867f579c91717c5d5658f28d0fb9448c363fdf278d824088164afe",
+          "size": 19569,
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "host",
+              "value": "https://api.open-meteo.com"
+            }
+          ],
+          "notes": "First Marketplace release of the example widget.",
+          "published": 1795796446
+        }
+      ]
+    }
+  ],
   "revoked": []
 }
