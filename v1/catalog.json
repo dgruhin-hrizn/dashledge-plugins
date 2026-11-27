@@ -1,22 +1,58 @@
 {
   "schema": 1,
-  "sequence": 4,
-  "generated": 1795812019,
-  "expires": 1798404019,
+  "sequence": 5,
+  "generated": 1795812268,
+  "expires": 1798404268,
   "plugins": [
     {
       "id": "plugin.dashledge.weather-example",
       "publisher": "dgruhin-hrizn",
       "title": "Weather (example)",
-      "summary": "Current weather and forecast from Open-Meteo. The example plugin from the Dashledge author guide.",
-      "category": "Everyday",
-      "homepage": "https://github.com/dgruhin-hrizn/dashledge/tree/main/widgets/example",
+      "summary": "Current conditions and the next 24 hours from Open-Meteo, for a place you choose. Dashledge's reference plugin.",
+      "category": "Productivity",
+      "homepage": "https://github.com/dgruhin-hrizn/dashledge-official-plugins/tree/main/plugins/weather-example",
       "license": "MIT",
       "icon": {
-        "path": "icons/plugin.dashledge.weather-example/1.0.0.svg",
+        "path": "icons/plugin.dashledge.weather-example/1.1.0.svg",
         "sha256": "e79220ab0c489208620ee056289cf7129201adeaec92028b2a77be5b33a3b3a0"
       },
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "packages/plugin.dashledge.weather-example/1.1.0.zip",
+          "sha256": "9f40c33dcab1ad641a85b9595a8a7164f03331311ecd197f24220cc42ef2ae8b",
+          "size": 11790,
+          "minAppVersion": "0.9.0",
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "command",
+              "value": "watch"
+            },
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "host",
+              "value": "https://api.open-meteo.com"
+            },
+            {
+              "kind": "host",
+              "value": "https://geocoding-api.open-meteo.com"
+            },
+            {
+              "kind": "permission",
+              "value": "settings"
+            },
+            {
+              "kind": "permission",
+              "value": "ui"
+            }
+          ],
+          "notes": "Each placement chooses its own place and °F or °C, adds the next 24 hours, and uses Dashledge's look. Existing installs ask to approve settings, the ui kit, the geocoding host and the watch command.",
+          "published": 1795812268
+        },
         {
           "version": "1.0.0",
           "path": "packages/plugin.dashledge.weather-example/1.0.0.zip",
