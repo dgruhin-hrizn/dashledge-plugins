@@ -1,0 +1,43 @@
+# Checks a submission with the same validator the Dashledge app runs. It has no secrets
+# and read-only access, so it is safe on pull requests from forks.
+name: Check submission
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  # The Dashledge source the checker is built from. Keep it on a commit whose package
+  # rules match the app version the Marketplace serves.
+  DASHLEDGE_REF: feat/plugin-marketplace
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check out the Dashledge package rules
+        uses: actions/checkout@v4
+        with:
+          repository: dgruhin-hrizn/dashledge
+          ref: ${{ env.DASHLEDGE_REF }}
+          path: .dashledge
+          sparse-checkout: src-tauri
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            .dashledge/src-tauri/target
+          key: dashledge-package-${{ runner.os }}-${{ hashFiles('.dashledge/src-tauri/Cargo.lock', '.dashledge/src-tauri/package-core/**') }}
+      - name: Build dashledge-package
+        run: cargo build --release --locked --manifest-path .dashledge/src-tauri/package-core/Cargo.toml --bin dashledge-package
+      - name: Check the listings this pull request adds
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          DASHLEDGE_PACKAGE: .dashledge/src-tauri/target/release/dashledge-package
+        run: bash scripts/check-pr.sh

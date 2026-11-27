@@ -1,0 +1,66 @@
+# Builds and signs the Marketplace catalog, then publishes it to GitHub Pages from the
+# gh-pages branch. It runs on every merge and weekly, so the catalog is re-signed
+# before it expires and a stale copy can't hide pulled versions for long.
+name: Publish catalog
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+env:
+  DASHLEDGE_REF: feat/plugin-marketplace
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out the published site
+        run: |
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null; then
+            git fetch --depth 1 origin gh-pages
+            git worktree add site FETCH_HEAD
+            git -C site checkout -B gh-pages
+          else
+            git worktree add --detach site
+            git -C site checkout --orphan gh-pages
+            git -C site rm -rf --quiet .
+          fi
+      - name: Check out the Dashledge package rules
+        uses: actions/checkout@v4
+        with:
+          repository: dgruhin-hrizn/dashledge
+          ref: ${{ env.DASHLEDGE_REF }}
+          path: .dashledge
+          sparse-checkout: src-tauri
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            .dashledge/src-tauri/target
+          key: dashledge-package-${{ runner.os }}-${{ hashFiles('.dashledge/src-tauri/Cargo.lock', '.dashledge/src-tauri/package-core/**') }}
+      - name: Build dashledge-package
+        run: cargo build --release --locked --manifest-path .dashledge/src-tauri/package-core/Cargo.toml --bin dashledge-package
+      - name: Build and sign the catalog
+        env:
+          CATALOG_SIGNING_KEY: ${{ secrets.CATALOG_SIGNING_KEY }}
+          DASHLEDGE_PACKAGE: .dashledge/src-tauri/target/release/dashledge-package
+        run: bash scripts/publish.sh
+      - name: Publish to gh-pages
+        run: |
+          cd site
+          git config user.name "dashledge-registry"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit --quiet -m "Publish catalog $(jq .sequence v1/catalog.json)"
+          git push origin gh-pages
