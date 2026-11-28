@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.radarr",
+  "version": "1.1.1",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "radarr-v1.1.1",
+    "asset": "radarr-1.1.1.zip"
+  },
+  "sha256": "22e01dfa1a8914d21fb57b5a371db76ebdedf61fdddf1c9c1a1251d2d9c5795a",
+  "summary": "Your Radarr download queue with progress and time left, beside the movies coming out soon, with posters.",
+  "notes": "Lighter to swipe through Coming up and the queue on the Edge, as in Sonarr 1.2.1. The date chips on posters drop their blur for a solid backing, the icons and downloaded posters lose their filters, and artwork appears only once it's ready to draw."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.sonarr",
+  "version": "1.2.2",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "sonarr-v1.2.2",
+    "asset": "sonarr-1.2.2.zip"
+  },
+  "sha256": "0cc8ab9cd419ba353c03f55263f0a40710aae51c4f59e695b828672d3262b7ab",
+  "summary": "Your Sonarr download queue over each series' artwork, beside a shelf of the episodes coming up. Search for a missed episode from the Edge.",
+  "notes": "A downloaded episode's poster dims under an overlay instead of a filter, so no tile in Coming up carries a filter, as in Radarr 1.1.1."
+}
