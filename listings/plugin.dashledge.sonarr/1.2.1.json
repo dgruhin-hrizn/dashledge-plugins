@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.sonarr",
+  "version": "1.2.1",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "sonarr-v1.2.1",
+    "asset": "sonarr-1.2.1.zip"
+  },
+  "sha256": "ada952b870301aa9b58a1b9cb14dd6264de4391ea9ac52ed5a1e6b758ee96496",
+  "summary": "Your Sonarr download queue over each series' artwork, beside a shelf of the episodes coming up. Search for a missed episode from the Edge.",
+  "notes": "Lighter to swipe through, for the black flashes in Coming up and the queue on the Edge. The date chips on posters drop their blur for a solid backing, the icons lose their shadow filter, and artwork appears only once it's ready to draw."
+}
