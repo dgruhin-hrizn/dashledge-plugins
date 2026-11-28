@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.radarr",
+  "version": "1.0.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "radarr-v1.0.0",
+    "asset": "radarr-1.0.0.zip"
+  },
+  "sha256": "7ecc72aa094bc2990c5d7245a009697a31fb42f6ac7b98b26a086822e5a8dd0b",
+  "summary": "Your Radarr download queue with progress and time left, beside the movies coming out soon, with posters.",
+  "notes": "First release. The queue as cards over each movie's fanart, and Coming up as a shelf of posters. They sit side by side on the Edge, or a tap apart in a small placement. It searches for missing movies, and each placement chooses its days ahead, release dates and first pane."
+}

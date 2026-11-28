@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.download-clients",
+  "version": "1.0.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "download-clients-v1.0.0",
+    "asset": "download-clients-1.0.0.zip"
+  },
+  "sha256": "902f3f403e136403f1b248d1d5261566073745db014b9f5d90c12abdfed010e7",
+  "summary": "SABnzbd, NZBGet and qBittorrent queues in one place: speed, what's left, and pause or resume.",
+  "notes": "First release: SABnzbd, NZBGet and qBittorrent in one placement, with pause and resume per client and per download."
+}
