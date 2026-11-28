@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.sonarr",
+  "version": "1.0.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "sonarr-v1.0.0",
+    "asset": "sonarr-1.0.0.zip"
+  },
+  "sha256": "54804a00aa86f8c409876ee95cc0e57b122d95060d8f039ba8bfed1fd4a47254",
+  "summary": "Upcoming episodes and the download queue from your Sonarr server, with series posters. Search for a missed episode from the Edge.",
+  "notes": "First release."
+}
