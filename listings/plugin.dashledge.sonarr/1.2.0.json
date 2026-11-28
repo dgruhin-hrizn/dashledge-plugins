@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.sonarr",
+  "version": "1.2.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "sonarr-v1.2.0",
+    "asset": "sonarr-1.2.0.zip"
+  },
+  "sha256": "97698408ff08ef66cc8d8b6a079aea44b8c152d512e407bc7ba741af90248725",
+  "summary": "Your Sonarr download queue over each series' artwork, beside a shelf of the episodes coming up. Search for a missed episode from the Edge.",
+  "notes": "The connection form explains where to find Sonarr's address and API key, and links to Sonarr's security settings. Needs Dashledge 0.10.0."
+}
