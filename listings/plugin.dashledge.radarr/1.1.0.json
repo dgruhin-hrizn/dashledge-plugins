@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.radarr",
+  "version": "1.1.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "radarr-v1.1.0",
+    "asset": "radarr-1.1.0.zip"
+  },
+  "sha256": "af3ca67294a5abf7ab996f42208100b9b191c420ec53f503cc09aa3984c9f688",
+  "summary": "Your Radarr download queue with progress and time left, beside the movies coming out soon, with posters.",
+  "notes": "The connection form explains where to find Radarr's address and API key, and links to Radarr's security settings. Needs Dashledge 0.10.0."
+}

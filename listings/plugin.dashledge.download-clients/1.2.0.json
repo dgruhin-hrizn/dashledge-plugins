@@ -1,0 +1,13 @@
+{
+  "id": "plugin.dashledge.download-clients",
+  "version": "1.2.0",
+  "publisher": "dgruhin-hrizn",
+  "source": {
+    "repo": "dgruhin-hrizn/dashledge-official-plugins",
+    "tag": "download-clients-v1.2.0",
+    "asset": "download-clients-1.2.0.zip"
+  },
+  "sha256": "102039e806e4464ff844ea4e2fd05c5c59540619f2e1573755f35361ede7a559",
+  "summary": "SABnzbd, NZBGet and qBittorrent queues in one place: speed, what's left, and pause or resume.",
+  "notes": "The connection form gives each client's own steps: where SABnzbd keeps its API key, NZBGet's username and password, and turning on qBittorrent's Web UI. It asks for a username only for NZBGet and qBittorrent. Needs Dashledge 0.10.0."
+}
