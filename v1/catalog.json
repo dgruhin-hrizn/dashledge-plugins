@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "sequence": 8,
-  "generated": 1795884817,
-  "expires": 1798476817,
+  "sequence": 9,
+  "generated": 1795886384,
+  "expires": 1798478384,
   "plugins": [
     {
       "id": "plugin.dashledge.download-clients",
@@ -164,10 +164,58 @@
       "homepage": "https://github.com/dgruhin-hrizn/dashledge-official-plugins/tree/main/plugins/radarr",
       "license": "MIT",
       "icon": {
-        "path": "icons/plugin.dashledge.radarr/1.1.0.svg",
+        "path": "icons/plugin.dashledge.radarr/1.1.1.svg",
         "sha256": "655648c78ee649802d8ea552499dbfc7fade106e5a712af5bc7221758a98e1be"
       },
       "versions": [
+        {
+          "version": "1.1.1",
+          "path": "packages/plugin.dashledge.radarr/1.1.1.zip",
+          "sha256": "22e01dfa1a8914d21fb57b5a371db76ebdedf61fdddf1c9c1a1251d2d9c5795a",
+          "size": 25118,
+          "minAppVersion": "0.10.0",
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "auth",
+              "value": "{\"header\":\"X-Api-Key\"}"
+            },
+            {
+              "kind": "command",
+              "value": "refresh"
+            },
+            {
+              "kind": "command",
+              "value": "search"
+            },
+            {
+              "kind": "connections",
+              "value": "1"
+            },
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "image",
+              "value": "api/v3/mediacover/*/*"
+            },
+            {
+              "kind": "permission",
+              "value": "images"
+            },
+            {
+              "kind": "permission",
+              "value": "settings"
+            },
+            {
+              "kind": "permission",
+              "value": "ui"
+            }
+          ],
+          "notes": "Lighter to swipe through Coming up and the queue on the Edge, as in Sonarr 1.2.1. The date chips on posters drop their blur for a solid backing, the icons and downloaded posters lose their filters, and artwork appears only once it's ready to draw.",
+          "published": 1795886384
+        },
         {
           "version": "1.1.0",
           "path": "packages/plugin.dashledge.radarr/1.1.0.zip",
@@ -275,10 +323,62 @@
       "homepage": "https://github.com/dgruhin-hrizn/dashledge-official-plugins/tree/main/plugins/sonarr",
       "license": "MIT",
       "icon": {
-        "path": "icons/plugin.dashledge.sonarr/1.2.1.svg",
+        "path": "icons/plugin.dashledge.sonarr/1.2.2.svg",
         "sha256": "3fcec4648b8c9a0b0d4493c85cde5f83ec680343ca7f736a108abbebd627c9a2"
       },
       "versions": [
+        {
+          "version": "1.2.2",
+          "path": "packages/plugin.dashledge.sonarr/1.2.2.zip",
+          "sha256": "0cc8ab9cd419ba353c03f55263f0a40710aae51c4f59e695b828672d3262b7ab",
+          "size": 26232,
+          "minAppVersion": "0.10.0",
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "auth",
+              "value": "{\"header\":\"X-Api-Key\"}"
+            },
+            {
+              "kind": "command",
+              "value": "search"
+            },
+            {
+              "kind": "command",
+              "value": "watch"
+            },
+            {
+              "kind": "connections",
+              "value": "1"
+            },
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "image",
+              "value": "api/v3/mediacover/*/fanart*.jpg"
+            },
+            {
+              "kind": "image",
+              "value": "api/v3/mediacover/*/poster*.jpg"
+            },
+            {
+              "kind": "permission",
+              "value": "images"
+            },
+            {
+              "kind": "permission",
+              "value": "settings"
+            },
+            {
+              "kind": "permission",
+              "value": "ui"
+            }
+          ],
+          "notes": "A downloaded episode's poster dims under an overlay instead of a filter, so no tile in Coming up carries a filter, as in Radarr 1.1.1.",
+          "published": 1795886384
+        },
         {
           "version": "1.2.1",
           "path": "packages/plugin.dashledge.sonarr/1.2.1.zip",
