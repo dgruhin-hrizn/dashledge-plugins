@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "sequence": 6,
-  "generated": 1795857365,
-  "expires": 1798449365,
+  "sequence": 7,
+  "generated": 1795880806,
+  "expires": 1798472806,
   "plugins": [
     {
       "id": "plugin.dashledge.download-clients",
@@ -13,10 +13,78 @@
       "homepage": "https://github.com/dgruhin-hrizn/dashledge-official-plugins/tree/main/plugins/download-clients",
       "license": "MIT",
       "icon": {
-        "path": "icons/plugin.dashledge.download-clients/1.0.0.svg",
+        "path": "icons/plugin.dashledge.download-clients/1.2.0.svg",
         "sha256": "ee67baed28e636013336f055e54ee6e81dfa3e2f81481b206c08252a686e280c"
       },
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "packages/plugin.dashledge.download-clients/1.2.0.zip",
+          "sha256": "102039e806e4464ff844ea4e2fd05c5c59540619f2e1573755f35361ede7a559",
+          "size": 27148,
+          "minAppVersion": "0.10.0",
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "auth",
+              "value": "none"
+            },
+            {
+              "kind": "auth",
+              "value": "nzbget: basic"
+            },
+            {
+              "kind": "auth",
+              "value": "qbittorrent: {\"login\":{\"body\":\"form\",\"fields\":{\"password\":\"{key}\",\"username\":\"{user}\"},\"path\":\"api/v2/auth/login\",\"session\":\"cookie\"}}"
+            },
+            {
+              "kind": "auth",
+              "value": "sabnzbd: {\"query\":\"apikey\"}"
+            },
+            {
+              "kind": "command",
+              "value": "pause"
+            },
+            {
+              "kind": "command",
+              "value": "refresh"
+            },
+            {
+              "kind": "command",
+              "value": "resume"
+            },
+            {
+              "kind": "connectionType",
+              "value": "nzbget"
+            },
+            {
+              "kind": "connectionType",
+              "value": "qbittorrent"
+            },
+            {
+              "kind": "connectionType",
+              "value": "sabnzbd"
+            },
+            {
+              "kind": "connections",
+              "value": "4"
+            },
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "permission",
+              "value": "settings"
+            },
+            {
+              "kind": "permission",
+              "value": "ui"
+            }
+          ],
+          "notes": "The connection form gives each client's own steps: where SABnzbd keeps its API key, NZBGet's username and password, and turning on qBittorrent's Web UI. It asks for a username only for NZBGet and qBittorrent. Needs Dashledge 0.10.0.",
+          "published": 1795880806
+        },
         {
           "version": "1.0.0",
           "path": "packages/plugin.dashledge.download-clients/1.0.0.zip",
@@ -96,10 +164,58 @@
       "homepage": "https://github.com/dgruhin-hrizn/dashledge-official-plugins/tree/main/plugins/radarr",
       "license": "MIT",
       "icon": {
-        "path": "icons/plugin.dashledge.radarr/1.0.0.svg",
+        "path": "icons/plugin.dashledge.radarr/1.1.0.svg",
         "sha256": "655648c78ee649802d8ea552499dbfc7fade106e5a712af5bc7221758a98e1be"
       },
       "versions": [
+        {
+          "version": "1.1.0",
+          "path": "packages/plugin.dashledge.radarr/1.1.0.zip",
+          "sha256": "af3ca67294a5abf7ab996f42208100b9b191c420ec53f503cc09aa3984c9f688",
+          "size": 24861,
+          "minAppVersion": "0.10.0",
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "auth",
+              "value": "{\"header\":\"X-Api-Key\"}"
+            },
+            {
+              "kind": "command",
+              "value": "refresh"
+            },
+            {
+              "kind": "command",
+              "value": "search"
+            },
+            {
+              "kind": "connections",
+              "value": "1"
+            },
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "image",
+              "value": "api/v3/mediacover/*/*"
+            },
+            {
+              "kind": "permission",
+              "value": "images"
+            },
+            {
+              "kind": "permission",
+              "value": "settings"
+            },
+            {
+              "kind": "permission",
+              "value": "ui"
+            }
+          ],
+          "notes": "The connection form explains where to find Radarr's address and API key, and links to Radarr's security settings. Needs Dashledge 0.10.0.",
+          "published": 1795880806
+        },
         {
           "version": "1.0.0",
           "path": "packages/plugin.dashledge.radarr/1.0.0.zip",
@@ -154,15 +270,67 @@
       "id": "plugin.dashledge.sonarr",
       "publisher": "dgruhin-hrizn",
       "title": "Sonarr",
-      "summary": "Upcoming episodes and the download queue from your Sonarr server, with series posters. Search for a missed episode from the Edge.",
+      "summary": "Your Sonarr download queue over each series' artwork, beside a shelf of the episodes coming up. Search for a missed episode from the Edge.",
       "category": "Music & media",
       "homepage": "https://github.com/dgruhin-hrizn/dashledge-official-plugins/tree/main/plugins/sonarr",
       "license": "MIT",
       "icon": {
-        "path": "icons/plugin.dashledge.sonarr/1.0.0.svg",
+        "path": "icons/plugin.dashledge.sonarr/1.2.0.svg",
         "sha256": "3fcec4648b8c9a0b0d4493c85cde5f83ec680343ca7f736a108abbebd627c9a2"
       },
       "versions": [
+        {
+          "version": "1.2.0",
+          "path": "packages/plugin.dashledge.sonarr/1.2.0.zip",
+          "sha256": "97698408ff08ef66cc8d8b6a079aea44b8c152d512e407bc7ba741af90248725",
+          "size": 25911,
+          "minAppVersion": "0.10.0",
+          "tier": "connector",
+          "grants": [
+            {
+              "kind": "auth",
+              "value": "{\"header\":\"X-Api-Key\"}"
+            },
+            {
+              "kind": "command",
+              "value": "search"
+            },
+            {
+              "kind": "command",
+              "value": "watch"
+            },
+            {
+              "kind": "connections",
+              "value": "1"
+            },
+            {
+              "kind": "connector",
+              "value": ""
+            },
+            {
+              "kind": "image",
+              "value": "api/v3/mediacover/*/fanart*.jpg"
+            },
+            {
+              "kind": "image",
+              "value": "api/v3/mediacover/*/poster*.jpg"
+            },
+            {
+              "kind": "permission",
+              "value": "images"
+            },
+            {
+              "kind": "permission",
+              "value": "settings"
+            },
+            {
+              "kind": "permission",
+              "value": "ui"
+            }
+          ],
+          "notes": "The connection form explains where to find Sonarr's address and API key, and links to Sonarr's security settings. Needs Dashledge 0.10.0.",
+          "published": 1795880806
+        },
         {
           "version": "1.0.0",
           "path": "packages/plugin.dashledge.sonarr/1.0.0.zip",
